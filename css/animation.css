@@ -1,0 +1,120 @@
+.item {
+  width: 100px;
+  height: 100px;
+}
+.item:hover {
+  animation-play-state: paused;
+}
+.animationFadeIn {
+  animation: fadeIn 2s linear infinite;
+
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animationFadeOut {
+  animation: fadeIn 2s linear infinite;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.animationFadeInFadeOut {
+  animation: fadeInFadeOut 3s infinite;
+}
+@keyframes fadeInFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.spinner {
+  border-radius: 50%;
+}
+.animationSpinnerLinear {
+  animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.animationSpinnerEase {
+  animation: rotate 2s ease infinite;
+}
+.animationSpinnerEaseOut {
+  animation: rotate 2s ease-out infinite;
+}
+.animationSpinnerEaseInOut {
+  animation: rotate 2s ease-in-out infinite;
+}
+
+.positionBox {
+  width: 100%;
+  height: 300px;
+  background: #444;
+  position: relative;
+}
+
+.animationPosition {
+  animation: position 5s linear infinite;
+  position: absolute;
+  animation-direction: reverse;
+}
+@keyframes position {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  35% {
+    left: calc(100% - 100px);
+    top: 0%;
+  }
+  50% {
+    left: calc(100% - 100px);
+    top: calc(100% - 100px);
+  }
+
+  85% {
+    left: 0;
+    top: calc(100% - 100px);
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+.animationContent::after {
+  content: '';
+  animation: conteudo 2s linear infinite;
+}
+
+@keyframes conteudo {
+  0% {
+    content: 'PROMOCAO';
+  }
+  50% {
+    content: '';
+  }
+  60% {
+    content: 'FRETE GRÁTIS';
+  }
+}
